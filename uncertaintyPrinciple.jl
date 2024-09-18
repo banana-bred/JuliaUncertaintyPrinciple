@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.45
+# v0.19.9
 
 using Markdown
 using InteractiveUtils
@@ -107,10 +107,11 @@ begin
 	# -- define some grid constants
 	local L = 100
 	local  N = 2000
-	local  dx = 2L / (N - 1)
-	local  x = -L : dx : L
-	local  x2 = -5L : dx : 5L
+	local  dx = 5L / (N - 1)
+	local  x = -5L : dx : 5L
 	local  k = 1
+
+	default(xlims = (-2L, 2L))
 	
 	# -- define some animation constants
 	const frames = 200
@@ -124,7 +125,7 @@ begin
 	wf2(x, t, width) = wf_gaussanimate.(x, t, k, width)
 	
 	anim = @animate for t in 0:frames - 1
-		t_val = t / (t_max / frames)
+		t_val = t / (2t_max / frames)
 		p1 = plot(x, wf2(x, t_val, 5))
 		p2 = plot(x, wf2(x, t_val, 50))
 		# p1 = vline!(p1, [0], color = :magenta)
@@ -1369,6 +1370,6 @@ version = "1.4.1+1"
 # ╟─9b0b9475-621a-4810-8d55-b3a5f12807ad
 # ╟─7fe26377-8154-46c4-a6cf-61a0eea91c84
 # ╟─032444bb-1af6-47e2-b8e6-ed70f7a09ffa
-# ╟─d4bd66ce-4c00-4187-8ba8-32fe20bb6e30
+# ╠═d4bd66ce-4c00-4187-8ba8-32fe20bb6e30
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
