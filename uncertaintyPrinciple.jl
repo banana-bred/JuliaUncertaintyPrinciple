@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.9
+# v0.19.45
 
 using Markdown
 using InteractiveUtils
@@ -47,10 +47,7 @@ begin
 end;
 
 # ╔═╡ c3ca4abc-f68d-4bfe-b336-87ba6879cab3
-md"#### Increase or decrease the uncertainty in position (x) using this slider"
-
-# ╔═╡ 9b0b9475-621a-4810-8d55-b3a5f12807ad
-@bind σ Slider(σmin:σmax)
+md"#### Increase or decrease the uncertainty in position (x) using this slider $(@bind σ Slider(σmin:σmax))"
 
 # ╔═╡ 7fe26377-8154-46c4-a6cf-61a0eea91c84
 begin
@@ -111,7 +108,7 @@ begin
 	local  x = -5L : dx : 5L
 	local  k = 1
 
-	default(xlims = (-2L, 2L))
+	default(xlims = (0, 3L))
 	
 	# -- define some animation constants
 	const frames = 200
@@ -1366,10 +1363,9 @@ version = "1.4.1+1"
 # ╠═c6e80bee-71e9-11ef-0c2b-0331d25dcbd3
 # ╟─29ac4b01-244e-4ec7-b564-9e53ac6cfff2
 # ╟─b685a354-71ce-41eb-b70a-3201e50ce32e
-# ╟─c3ca4abc-f68d-4bfe-b336-87ba6879cab3
-# ╟─9b0b9475-621a-4810-8d55-b3a5f12807ad
+# ╠═c3ca4abc-f68d-4bfe-b336-87ba6879cab3
 # ╟─7fe26377-8154-46c4-a6cf-61a0eea91c84
 # ╟─032444bb-1af6-47e2-b8e6-ed70f7a09ffa
-# ╠═d4bd66ce-4c00-4187-8ba8-32fe20bb6e30
+# ╟─d4bd66ce-4c00-4187-8ba8-32fe20bb6e30
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
